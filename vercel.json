@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "generate-quiz.js",
+      "src": "Backend/generate-quiz.js",
       "use": "@vercel/node"
     },
     {
@@ -13,11 +13,11 @@
   "routes": [
     {
       "src": "/api/generate-quiz",
-      "dest": "generate-quiz.js"
+      "dest": "Backend/generate-quiz.js"
     },
     {
       "src": "/(.*)",
-      "dest": "quiz-app/build/$1"
+      "dest": "quiz-app/dist/$1"
     }
   ]
 }
