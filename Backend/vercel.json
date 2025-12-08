@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "generate-quiz.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "quiz-app/package.json",
+      "use": "@vercel/static-build"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/generate-quiz",
+      "dest": "generate-quiz.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "quiz-app/build/$1"
+    }
+  ]
+}
